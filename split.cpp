@@ -23,14 +23,16 @@ void split(Node*& in, Node*& odds, Node*& evens)
   if(in == NULL){
     return;
   }
-  
+  Node* temp = in;
+  in = NULL;
   if(in->value % 2 == 0){
-    evens = in;
-    split(in->next, odds, evens->next);
+    evens = temp;
+    evens->next = NULL;
+    split(temp->next, odds, evens->next);
   }
   else{
     odds = in;
-    split(in->next, odds->next, evens);
+    split(temp->next, odds->next, evens);
   }
   
   
