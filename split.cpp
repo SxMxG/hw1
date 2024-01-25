@@ -22,7 +22,7 @@ void split(Node*& in, Node*& odds, Node*& evens)
 
   if(in == NULL){
     delete in;
-    in = nullptr;
+    in = NULL;
     return;
   }
   Node* temp = new Node(in->value, NULL); 
