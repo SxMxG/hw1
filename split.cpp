@@ -34,6 +34,7 @@ void split(Node*& in, Node*& odds, Node*& evens)
     odds = temp;
     split(in->next, odds->next, evens);
   }
+  delete in;
 }
 
 /* If you needed a helper function, write it here */
