@@ -26,7 +26,7 @@ size_t ULListStr::size() const
 
 // WRITE YOUR CODE HERE
 
-void ULListStr::push_back(const std::string& val){
+void ULListStr::push_front(const std::string& val){
   Item* temp = new Item();
   temp->val  = val;
   if(empty()){
@@ -34,10 +34,28 @@ void ULListStr::push_back(const std::string& val){
     return;
   }
   else{
-    tail_ = temp;
-    
+    temp->next = head_;
+    head_->prev = temp;
+    head_ = temp;
+
   }
 }
+
+void ULListStr::push_front(const std::string& val){
+  Item* temp = new Item();
+  temp->val  = val;
+  if(empty()){
+    head_ = tail_ = temp;
+    return;
+  }
+  else{
+    temp->prev = tail_;
+    tail_->next = temp;
+    tail_ = temp;
+
+  }
+}
+
 void ULListStr::set(size_t loc, const std::string& val)
 {
   std::string* ptr = getValAtLoc(loc);
