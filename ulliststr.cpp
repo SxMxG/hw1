@@ -72,7 +72,7 @@ void ULListStr::push_back(const std::string& val){
     size_++;
   }else{
     tail_->val[tail_->last+1] = val;
-    tail->last++;
+    tail_->last++;
   }
 }
 
