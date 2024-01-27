@@ -99,7 +99,7 @@ void ULListStr::pop_back(){
     }
     
   }else{
-    tail_->val[tail_->last] = nullptr;
+    tail_->val[tail_->last - 1] = "";
     tail_->last--; 
   }
   size_--;
@@ -117,7 +117,7 @@ void ULListStr::pop_front(){
       tail_ = NULL;
     }
   }else{
-    head_->val[head_->first] = nullptr;
+    head_->val[head_->first] = "";
     head_->first--; 
   }
 }
