@@ -49,6 +49,7 @@ void ULListStr::push_front(const std::string& val){
   }else{
     head_->val[head_->first - 1] = val;
     head_->first--;
+    size_++;
   }
 }
 
@@ -75,6 +76,7 @@ void ULListStr::push_back(const std::string& val){
   }else{
     tail_->val[tail_->last] = val;
     tail_->last++;
+    size_++;
   }
 }
 
