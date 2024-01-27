@@ -142,7 +142,7 @@ void ULListStr::pop_front(){
 
 std::string* ULListStr::getValAtLoc(size_t loc) const{
   Item* temp = head_;
-  for(size_t i = head_->first, it = 0; it <= loc; it++,i++){
+  for(size_t i = temp->first, it = 0; it <= loc; it++,i++){
     if(i == 10){
       temp = temp->next;
       i = 0;
