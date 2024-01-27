@@ -27,53 +27,76 @@ size_t ULListStr::size() const
 // WRITE YOUR CODE HERE
 
 void ULListStr::push_front(const std::string& val){
-  Item* temp = new Item();
-  temp->val  = val;
+  
   if(empty()){
+    Item* temp = new Item();
+    temp->val[0]  = val;
+    temp->first = 0;
+    temp->last = 1;
     head_ = tail_ = temp;
     size_++;
     return;
   }
-  else{
+  else if(head_->first == 0){
+    Item* temp = new Item();
+    temp->first = 9;
+    temp->last = 10;
+    temp->val[temp->last-1]  = val;
     temp->next = head_;
     head_->prev = temp;
     head_ = temp;
     size_++;
+  }else{
+    head_->val[head_->first - 1] = val;
+    head_->first--;
   }
 }
 
 void ULListStr::push_back(const std::string& val){
-  Item* temp = new Item();
-  temp->val  = val;
+  
   if(empty()){
+    Item* temp = new Item();
+    temp->val[9]  = val;
+    temp->first = 9;
+    temp->last = 10;
     head_ = tail_ = temp;
     size_++;
     return;
   }
-  else{
+  else if(tail_->last == ARRSIZE) {
+    Item* temp = new Item();
+    temp->val  = val;
     temp->prev = tail_;
     tail_->next = temp;
     tail_ = temp;
     size_++;
+  }else{
+    tail_->val[tail_->last+1] = val;
+    last++;
   }
 }
 
 std::string const & ULListStr::front() const{
-  return head_->val;
+  return head_->val[head_->first];
 }
 
 std::string const & ULListStr::back() const{
-  return tail_->val;
+  return tail_->val[tail_->last];
 }
 
 
 std::string* ULListStr::getValAtLoc(size_t loc) const{
-  Item* temp = new Item();
-  temp = head_;
-  for(int i = 0; i < loc;i++){
-    temp = temp->next;
+  Item* temp = head_;
+  for(int i = temp->first, int it = 0; it =< loc; it++,i++){
+    if(i == 9){
+      temp = temp->next;
+      i = 0;
+    }
+    if(it == loc){
+      return temp->val[i];
+    } 
   }
-  return temp->val;
+  return NULL;
 }
 
 void ULListStr::set(size_t loc, const std::string& val)
