@@ -41,7 +41,7 @@ void ULListStr::push_front(const std::string& val){
     Item* temp = new Item();
     temp->first = 9;
     temp->last = 10;
-    temp->val[temp->last-1]  = val;
+    temp->val[temp->first]  = val;
     temp->next = head_;
     head_->prev = temp;
     head_ = temp;
