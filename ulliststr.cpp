@@ -57,7 +57,7 @@ void ULListStr::push_front(const std::string& val){
     std::cout<<"to list front"<<std::endl;
     head_->val[head_->first - 1] = val;
     head_->first--;
-    std::cout<<head_->val[head_->first]<<std::endl;
+    std::cout<<head_->val[head_->first]<< head_->first <<std::endl;
     size_++;
   }
 }
