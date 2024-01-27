@@ -77,11 +77,11 @@ void ULListStr::push_back(const std::string& val){
 }
 
 std::string const & ULListStr::front() const{
-  return &head_->val[head_->first];
+  return head_->val[head_->first];
 }
 
 std::string const & ULListStr::back() const{
-  return &tail_->val[tail_->last];
+  return tail_->val[tail_->last];
 }
 
 void ULListStr::pop_back(){
@@ -95,7 +95,7 @@ void ULListStr::pop_back(){
     }
     delete temp;
   }else{
-    tail_->val[tail_->last] = NULL;
+    tail_->val[tail_->last] = nullptr;
     tail_->last--; 
   }
   size_--;
@@ -112,7 +112,7 @@ void ULListStr::pop_front(){
     }
     delete temp;
   }else{
-    head_->val[head_->first] = NULL;
+    head_->val[head_->first] = nullptr;
     head_->first--; 
   }
 }
