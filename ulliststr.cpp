@@ -96,40 +96,37 @@ std::string const & ULListStr::back() const{
 }
 
 void ULListStr::pop_back(){
-  if(tail_->last == 1){
-    //if there is only one like object in list at beginning but at end of whole list
+  tail_->val[tail_->last-1] = "";
+  tail_->last--;
+  if(tail_->first == tail_->last){
+    std::cout<<"back but dif"<<std::endl;
     Item* temp = tail_;
-    tail_ = tail_->prev;
-    delete temp;
-    if(tail_){
+    if(tail_->prev != nullptr){
+      tail_ = tail_->prev;
       tail_->next = nullptr;
     }else{
-      delete head_;
+      tail_ = nullptr;
       head_ = nullptr;
     }
-    
-  }else{
-    tail_->val[tail_->last-1] = nullptr;
-    tail_->last--; 
+    delete temp;
   }
   size_--;
 }
 
 void ULListStr::pop_front(){
-  if(head_->first == 9){
-    //if there is only one like object in list at end but at the beginning of whole list
+  head_->val[head_->first] = "";
+  head_->first++;
+  if(head_->first == head_->last){
     Item* temp = head_;
-    head_ = head_->next;
-    delete temp;
-    if(head_){
+    if(head_->next != nullptr){
+      head_ = head_->next;
       head_->prev = nullptr;
     }else{
-      delete head_;
+      head_ = nullptr;
       tail_ = nullptr;
     }
-  }else{
-    head_->val[head_->first] = nullptr;
-    head_->first++; 
+    delete temp;
+    
   }
   size_--;
 }
