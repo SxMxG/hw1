@@ -29,6 +29,7 @@ size_t ULListStr::size() const
 void ULListStr::push_front(const std::string& val){
   
   if(empty()){
+    std::cout<<"created"<<std::endl;
     Item* temp = new Item();
     temp->val[0]  = val;
     temp->first = 0;
@@ -40,6 +41,7 @@ void ULListStr::push_front(const std::string& val){
     return;
   }
   else if(head_->first == 0){
+    std::cout<<"created but added"<<std::endl;
     Item* temp = new Item();
     temp->first = 9;
     temp->last = 10;
@@ -50,6 +52,7 @@ void ULListStr::push_front(const std::string& val){
     head_->prev = nullptr;
     size_++;
   }else{
+    std::cout<<"to list front"<<std::endl;
     head_->val[head_->first - 1] = val;
     head_->first--;
     size_++;
