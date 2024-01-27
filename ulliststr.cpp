@@ -1,6 +1,7 @@
 #include <cstddef>
 #include <stdexcept>
 #include "ulliststr.h"
+#include <iostream>
 
 ULListStr::ULListStr()
 {
