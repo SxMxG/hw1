@@ -15,7 +15,8 @@ int main(int argc, char* argv[])
     dat.push_front("work");
     dat.push_front("work");
     for(int i = 0;i<15;i++){
-        dat.push_front("bs");
+        string s = "bs" + i;
+        dat.push_front(s);
     }
     for(int i = 0;i<15;i++){
         cout<< i <<dat.get(i)<<endl;
