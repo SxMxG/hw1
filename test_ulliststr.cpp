@@ -15,6 +15,7 @@ int main(int argc, char* argv[])
     dat.push_front("work");
     dat.push_back("work");
     cout << dat.get(0) << " " << dat.get(1) << " " << dat.get(2) << endl;
+    cout <<"do this even work"<<endl;
     // prints: 8 7 9
     cout << dat.size() << endl;  // prints 3 since there are 3 strings stored
 }
