@@ -11,9 +11,9 @@ int main(int argc, char* argv[])
 {
     using namespace std;
     ULListStr dat;
-    dat.push_front("pls");
-    dat.push_front("work");
-    dat.push_front("work");
+    dat.push_front("3");
+    dat.push_front("2");
+    dat.push_front("1");
     
     cout << dat.get(0) << " " << dat.get(1) << " " << dat.get(2) << " " << dat.get(3) << " " << dat.get(4) << " " << dat.get(5)<<endl;
     cout <<"do this even work"<<endl;
