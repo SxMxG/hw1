@@ -30,7 +30,6 @@ size_t ULListStr::size() const
 void ULListStr::push_front(const std::string& val){
   
   if(empty()){
-    std::cout<<"created"<<std::endl;
     Item* temp = new Item();
     temp->val[0]  = val;
     temp->first = 0;
@@ -38,12 +37,10 @@ void ULListStr::push_front(const std::string& val){
     temp->prev = nullptr;
     temp->next = nullptr;
     head_ = tail_ = temp;
-    std::cout<<head_->val[head_->first]<< head_->first <<std::endl;
     size_++;
     return;
   }
   else if(head_->first == 0){
-    std::cout<<"created but added"<<std::endl;
     Item* temp = new Item();
     temp->first = 9;
     temp->last = 10;
@@ -52,13 +49,10 @@ void ULListStr::push_front(const std::string& val){
     head_->prev = temp;
     head_ = temp;
     head_->prev = nullptr;
-    std::cout<<head_->val[head_->first]<< head_->first <<std::endl;
     size_++;
   }else{
-    std::cout<<"to list front"<<std::endl;
     head_->val[head_->first - 1] = val;
     head_->first--;
-    std::cout<<head_->val[head_->first]<< head_->first <<std::endl;
     size_++;
   }
 }
@@ -98,7 +92,7 @@ std::string const & ULListStr::front() const{
 }
 
 std::string const & ULListStr::back() const{
-  return tail_->val[tail_->last];
+  return tail_->val[tail_->last-1];
 }
 
 void ULListStr::pop_back(){
@@ -115,14 +109,14 @@ void ULListStr::pop_back(){
     }
     
   }else{
-    tail_->val[tail_->last - 1] = "";
+    tail_->val[tail_->last-1] = nullptr;
     tail_->last--; 
   }
   size_--;
 }
 
 void ULListStr::pop_front(){
-  if(head_->last == 10){
+  if(head_->first == 9){
     //if there is only one like object in list at end but at the beginning of whole list
     Item* temp = head_;
     head_ = head_->next;
@@ -130,12 +124,12 @@ void ULListStr::pop_front(){
     if(head_){
       head_->prev = nullptr;
     }else{
-      delete tail_;
+      delete head_;
       tail_ = nullptr;
     }
   }else{
-    head_->val[head_->first] = "";
-    head_->first--; 
+    head_->val[head_->first] = nullptr;
+    head_->first++; 
   }
   size_--;
 }
@@ -144,14 +138,11 @@ std::string* ULListStr::getValAtLoc(size_t loc) const{
   Item* temp = head_;
 
   for(size_t i = temp->first, it = 0; it <= loc; it++,i++){
-    std::cout<<i<<" "<<it<<std::endl;
     if(i == 10){
       temp = temp->next;
       i = 0;
-      continue;
     }
     if(it == loc){
-      std::cout<<temp->val[i]<<std::endl;
       return &temp->val[i];
     } 
   }
