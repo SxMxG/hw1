@@ -84,6 +84,23 @@ std::string const & ULListStr::back() const{
   return tail_->val[tail_->last];
 }
 
+void ULListStr::pop_back(){
+  if(tail_->last == 1){
+    //if there is only one like object in list at beginning but at end of whole list
+  }else{
+    tail_->val[tail_->last] = NULL;
+    tail->last--; 
+  }
+}
+
+void ULListStr::pop_front(){
+  if(tail_->last == 1){
+    //if there is only one like object in list at end but at the beginning of whole list
+  }else{
+    head_->val[head_->first] = NULL;
+    head_->first--; 
+  }
+}
 
 std::string* ULListStr::getValAtLoc(size_t loc) const{
   Item* temp = head_;
