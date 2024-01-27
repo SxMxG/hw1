@@ -9,6 +9,7 @@
 
 int main(int argc, char* argv[])
 {
+    using namespace std;
     ULListStr dat;
     dat.push_back("pls");
     dat.push_front("work");
