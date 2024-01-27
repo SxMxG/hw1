@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
     using namespace std;
     ULListStr dat;
     dat.push_back("pls");
-    dat.push_front("work");
+    dat.push_back("work");
     dat.push_back("work");
     cout << dat.get(0) << " " << dat.get(1) << " " << dat.get(2) << endl;
     cout <<"do this even work"<<endl;
