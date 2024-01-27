@@ -37,11 +37,10 @@ void ULListStr::push_front(const std::string& val){
     temp->next = head_;
     head_->prev = temp;
     head_ = temp;
-
   }
 }
 
-void ULListStr::push_front(const std::string& val){
+void ULListStr::push_back(const std::string& val){
   Item* temp = new Item();
   temp->val  = val;
   if(empty()){
@@ -52,8 +51,11 @@ void ULListStr::push_front(const std::string& val){
     temp->prev = tail_;
     tail_->next = temp;
     tail_ = temp;
-
   }
+}
+
+void ULListStr::front(const std::string& val){
+  return head_->
 }
 
 void ULListStr::set(size_t loc, const std::string& val)
