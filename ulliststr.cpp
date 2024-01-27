@@ -55,11 +55,11 @@ void ULListStr::push_back(const std::string& val){
 }
 
 std::string const & ULListStr::front() const{
-  
+  return head_->val;
 }
 
 std::string const & ULListStr::back() const{
-  
+  return tail_->val;
 }
 
 
