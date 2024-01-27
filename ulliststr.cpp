@@ -101,7 +101,8 @@ void ULListStr::pop_back(){
     if(tail_){
       tail_->next = nullptr;
     }else{
-      head_ = NULL;
+      delete head_;
+      head_ = nullptr;
     }
     
   }else{
@@ -120,7 +121,8 @@ void ULListStr::pop_front(){
     if(head_){
       head_->prev = nullptr;
     }else{
-      tail_ = NULL;
+      delete tail_;
+      tail_ = nullptr;
     }
   }else{
     head_->val[head_->first] = "";
