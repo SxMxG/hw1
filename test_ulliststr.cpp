@@ -14,7 +14,7 @@ int main(int argc, char* argv[])
     dat.push_back("pls");
     dat.push_back("work");
     dat.push_back("work");
-    for(int i = 0;i<10;i++){
+    for(int i = 0;i<15;i++){
         dat.push_back("bs");
     }
     for(int i = 0;i<15;i++){
