@@ -65,6 +65,8 @@ void ULListStr::push_back(const std::string& val){
   }
   else if(tail_->last == ARRSIZE) {
     Item* temp = new Item();
+    temp->first = 0;
+    temp->last = 1;
     temp->val[0]  = val;
     temp->prev = tail_;
     tail_->next = temp;
