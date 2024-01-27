@@ -131,7 +131,7 @@ std::string* ULListStr::getValAtLoc(size_t loc) const{
       i = 0;
     }
     if(it == loc){
-      return temp->val[i];
+      return &temp->val[i];
     } 
   }
   return NULL;
