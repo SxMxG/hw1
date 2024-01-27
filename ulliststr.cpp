@@ -56,9 +56,9 @@ void ULListStr::push_back(const std::string& val){
   
   if(empty()){
     Item* temp = new Item();
-    temp->val[9]  = val;
-    temp->first = 9;
-    temp->last = 10;
+    temp->val[0]  = val;
+    temp->first = 0;
+    temp->last = 1;
     head_ = tail_ = temp;
     size_++;
     return;
