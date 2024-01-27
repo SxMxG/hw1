@@ -38,6 +38,7 @@ void ULListStr::push_front(const std::string& val){
     temp->prev = nullptr;
     temp->next = nullptr;
     head_ = tail_ = temp;
+    std::cout<<head_->val[head_->first]<<std::endl;
     size_++;
     return;
   }
