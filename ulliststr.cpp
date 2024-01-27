@@ -128,6 +128,7 @@ void ULListStr::pop_front(){
     head_->val[head_->first] = "";
     head_->first--; 
   }
+  size_--;
 }
 
 std::string* ULListStr::getValAtLoc(size_t loc) const{
