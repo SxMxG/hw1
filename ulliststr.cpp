@@ -91,11 +91,13 @@ void ULListStr::pop_back(){
     //if there is only one like object in list at beginning but at end of whole list
     Item* temp = tail_;
     tail_ = tail_->prev;
-    tail_->next == NULL;
-    if(head_ == tail_){
+    delete temp;
+    if(tail_){
+      tail_->next = nullptr;
+    }else{
       head_ = NULL;
     }
-    delete temp;
+    
   }else{
     tail_->val[tail_->last] = nullptr;
     tail_->last--; 
@@ -108,8 +110,9 @@ void ULListStr::pop_front(){
     //if there is only one like object in list at end but at the beginning of whole list
     Item* temp = head_;
     head_ = head_->next;
-    head_->prev == NULL;
-    if(head_ == tail_){
+    if(head_){
+      head_->prev = nullptr;
+    }else{
       tail_ = NULL;
     }
     delete temp;
