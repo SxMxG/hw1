@@ -11,11 +11,11 @@ int main(int argc, char* argv[])
 {
     using namespace std;
     ULListStr dat;
-    dat.push_back("pls");
-    dat.push_back("work");
-    dat.push_back("work");
+    dat.push_front("pls");
+    dat.push_front("work");
+    dat.push_front("work");
     for(int i = 0;i<15;i++){
-        dat.push_back("bs");
+        dat.push_front("bs");
     }
     for(int i = 0;i<15;i++){
         cout<< i <<dat.get(i)<<endl;
