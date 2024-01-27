@@ -33,6 +33,8 @@ void ULListStr::push_front(const std::string& val){
     temp->val[0]  = val;
     temp->first = 0;
     temp->last = 1;
+    temp->prev = nullptr;
+    temp->next = nullptr;
     head_ = tail_ = temp;
     size_++;
     return;
@@ -60,6 +62,8 @@ void ULListStr::push_back(const std::string& val){
     temp->val[0]  = val;
     temp->first = 0;
     temp->last = 1;
+    temp->next = nullptr;
+    temp->prev = nullptr;
     head_ = tail_ = temp;
     size_++;
     return;
