@@ -108,7 +108,7 @@ void ULListStr::pop_front(){
     //if there is only one like object in list at end but at the beginning of whole list
     Item* temp = head_;
     head_ = head_->next;
-    head_->next == NULL;
+    head_->prev == NULL;
     if(head_ == tail_){
       tail_ = NULL;
     }
