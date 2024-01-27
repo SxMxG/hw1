@@ -65,14 +65,14 @@ void ULListStr::push_back(const std::string& val){
   }
   else if(tail_->last == ARRSIZE) {
     Item* temp = new Item();
-    temp->val  = val;
+    temp->val[0]  = val;
     temp->prev = tail_;
     tail_->next = temp;
     tail_ = temp;
     size_++;
   }else{
     tail_->val[tail_->last+1] = val;
-    last++;
+    tail->last++;
   }
 }
 
@@ -87,7 +87,7 @@ std::string const & ULListStr::back() const{
 
 std::string* ULListStr::getValAtLoc(size_t loc) const{
   Item* temp = head_;
-  for(int i = temp->first, int it = 0; it =< loc; it++,i++){
+  for(int i = temp->first, it = 0; it =< loc; it++,i++){
     if(i == 9){
       temp = temp->next;
       i = 0;
