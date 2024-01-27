@@ -99,7 +99,6 @@ void ULListStr::pop_back(){
   tail_->val[tail_->last-1] = "";
   tail_->last--;
   if(tail_->first == tail_->last){
-    std::cout<<"back but dif"<<std::endl;
     Item* temp = tail_;
     if(tail_->prev != nullptr){
       tail_ = tail_->prev;
