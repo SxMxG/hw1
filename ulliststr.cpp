@@ -71,7 +71,7 @@ void ULListStr::push_back(const std::string& val){
     tail_ = temp;
     size_++;
   }else{
-    tail_->val[tail_->last+1] = val;
+    tail_->val[tail_->last] = val;
     tail_->last++;
   }
 }
@@ -87,15 +87,30 @@ std::string const & ULListStr::back() const{
 void ULListStr::pop_back(){
   if(tail_->last == 1){
     //if there is only one like object in list at beginning but at end of whole list
+    Item* temp = tail_;
+    tail = tail->prev;
+    tail_->next == NULL;
+    if(head_ == tail_){
+      head_ = NULL;
+    }
+    delete temp;
   }else{
     tail_->val[tail_->last] = NULL;
     tail->last--; 
   }
+  size_--;
 }
 
 void ULListStr::pop_front(){
-  if(tail_->last == 1){
+  if(head_->last == 10){
     //if there is only one like object in list at end but at the beginning of whole list
+    Item* temp = head_;
+    head_ = head_->next;
+    head_->next == NULL;
+    if(head_ == tail_){
+      tail_ = NULL;
+    }
+    delete temp;
   }else{
     head_->val[head_->first] = NULL;
     head_->first--; 
