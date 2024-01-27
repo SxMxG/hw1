@@ -148,7 +148,7 @@ std::string* ULListStr::getValAtLoc(size_t loc) const{
       i = 0;
       continue;
     }
-    if(it == loc){
+    if(i == loc){
       return &temp->val[i];
     } 
   }
