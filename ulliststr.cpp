@@ -64,7 +64,12 @@ std::string const & ULListStr::back() const{
 
 
 std::string* ULListStr::getValAtLoc(size_t loc) const{
-
+  Node temp = new Item();
+  temp = head_;
+  for(int i = 0; i < loc;i++){
+    temp = temp->next;
+  }
+  return temp->val;
 }
 
 void ULListStr::set(size_t loc, const std::string& val)
