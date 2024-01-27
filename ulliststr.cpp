@@ -31,12 +31,14 @@ void ULListStr::push_front(const std::string& val){
   temp->val  = val;
   if(empty()){
     head_ = tail_ = temp;
+    size_++;
     return;
   }
   else{
     temp->next = head_;
     head_->prev = temp;
     head_ = temp;
+    size_++;
   }
 }
 
@@ -45,12 +47,14 @@ void ULListStr::push_back(const std::string& val){
   temp->val  = val;
   if(empty()){
     head_ = tail_ = temp;
+    size_++;
     return;
   }
   else{
     temp->prev = tail_;
     tail_->next = temp;
     tail_ = temp;
+    size_++;
   }
 }
 
@@ -64,7 +68,7 @@ std::string const & ULListStr::back() const{
 
 
 std::string* ULListStr::getValAtLoc(size_t loc) const{
-  Node temp = new Item();
+  Item* temp = new Item();
   temp = head_;
   for(int i = 0; i < loc;i++){
     temp = temp->next;
